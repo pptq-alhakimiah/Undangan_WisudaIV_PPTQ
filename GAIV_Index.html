@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Haflah Khotmil Qur’an Angkatan Ke-IV - PPTQ Al-Hakimiah</title>
+
+  <!-- Google Fonts Fallback & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="GAIV_Global.css" />
+  <link rel="stylesheet" href="GAIV_Style.css" />
+  <link rel="icon" type="image/png" href="img/Alhakimiah.png">
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.querySelector('.menu-toggle-mobile');
+    const navbar = document.querySelector('.navbar');
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    // 1. Fungsi Tombol Hamburger: Buka / Tutup Menu Mobile
+    if (menuToggle && navbar) {
+      menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('is-active');
+        
+        // Ubah atribut aria-expanded untuk aksesibilitas
+        const isOpen = navbar.classList.contains('is-active');
+        menuToggle.setAttribute('aria-expanded', isOpen);
+      });
+    }
+
+    // 2. Otomatis tutup menu mobile jika salah satu tautan diklik
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (navbar.classList.contains('is-active')) {
+          navbar.classList.remove('is-active');
+        }
+      });
+    });
+
+    // 3. Menutup menu jika pengguna mengklik area luar menu
+    document.addEventListener('click', (event) => {
+      if (navbar && navbar.classList.contains('is-active')) {
+        if (!navbar.contains(event.target) && !menuToggle.contains(event.target)) {
+          navbar.classList.remove('is-active');
+        }
+      }
+    });
+  });
+</script>
+</head>
+<body>
+  <div class="al-hakimiah-undangan">
+
+    <!-- ==================== 1. NAVIGASI / HEADER ==================== -->
+    <header class="navigasi">
+      <div class="brand-group">
+        <div class="identity-emblem">
+          <div class="book-open">
+            <img class="vector-icon" src="img/Alhakimiah(1).svg" alt="Emblem Pondok" />
+          </div>
+        </div>
+        <div class="institution">
+          <div class="institution-name">Al-Hakimiah</div>
+          <div class="text-sub">PONDOK PESANTREN TAHFIDZ AL-QUR’AN</div>
+        </div>
+      </div>
+
+      <!-- Navigasi Menu Desktop -->
+      <nav class="navbar">
+        <a href="#pesan" class="tautan">Undangan</a>
+        <a href="#waktu-tempat" class="tautan">Waktu &amp; tempat</a>
+        <a href="#tahapan" class="tautan">Tahapan</a>
+        <a href="#wisudawan" class="tautan">Wisudawan</a>
+        <a href="#lokasi" class="action-btn action-primary">
+          <span class="action-label">Lihat lokasi</span>
+          <div class="icon-box-16">
+            <img class="vector-icon" src="img/map-pin2.svg" alt="Lokasi" />
+          </div>
+        </a>
+      </nav>
+
+      <!-- Tombol Hamburger (Mobile) -->
+      <button class="menu-toggle-mobile" aria-label="Buka Menu">
+        <img class="vector-icon" src="img/menu-burger.svg" alt="Menu" />
+      </button>
+    </header>
+
+    <main class="main-content">
+      <!-- ==================== 2. SAMPUL UNDANGAN / HERO ==================== -->
+      <section class="sampul-undangan" id="undangan">
+        <div class="judul-acara">
+          <div class="section-badge">
+            <div class="garis-aksen"></div>
+            <span class="section-label">UNDANGAN • ANGKATAN KE-IV</span>
+          </div>
+
+          <h1 class="judul-utama">Haflah Khotmil<br />Qur’an</h1>
+          <p class="tema-wisuda">Merayakan ikhtiar,<br />merawat cahaya Al-Qur’an.</p>
+
+          <!-- BAGIAN PERSONALISASI NAMA TAMU DINAMIS -->
+        <div style="background: #fffcf7; padding: 18px 24px; border-radius: 8px; border: 1px solid #e4d8c9; margin-top: 10px;">
+          <p style="font-size: 11px; font-weight: 600; color: #591e2b; margin-bottom: 4px; text-transform: uppercase;">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+          <h2 id="nama-tamu" style="font-family: 'Cormorant Garamond-SemiBold', serif; font-size: 24px; color: #591e2b; margin: 0;">Tamu Undangan</h2>
+        </div>
+        <!-- SCRIPT JS UNTUK MENANGKAP NAMA TAMU DARI URL -->
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const namaTamu = urlParams.get('to');
+    const elemenNama = document.getElementById('nama-tamu');
+    
+    if (namaTamu && elemenNama) {
+      // Mengganti tanda plus (+) atau format spasi pada URL menjadi spasi normal
+      elemenNama.innerText = decodeURIComponent(namaTamu.replace(/\+/g, ' '));
+    }
+  });
+</script>
+
+          <p class="pengantar-acara">
+            Dengan penuh syukur, kami mengundang Bapak/Ibu untuk hadir dalam Wisuda Santri Angkatan Ke-IV Pondok Pesantren Tahfidz Al-Qur’an Al-Hakimiah.
+          </p>
+
+          <div class="info-tanggal">
+            <div class="calendar-days">
+              <img class="vector-icon" src="img/calendar-days.svg" alt="Kalender" />
+            </div>
+            <div class="tanggal-acara">Ahad, 29 November 2026</div>
+          </div>
+
+          <div class="aksi-pembuka">
+            <a href="#waktu-tempat" class="action-btn action-primary">
+              <span class="action-label">Waktu &amp; tempat</span>
+              <div class="icon-box-16">
+                <img class="vector-icon" src="img/arrow-down.svg" alt="Arah" />
+              </div>
+            </a>
+            <a href="#pesan" class="action-btn action-secondary">
+              <span class="action-label-secondary">Baca undangan</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="ilustrasi-seremonial">
+          <img class="al-quran-dan-taman" src="img/Draft_Poster.png" alt="Al-Qur'an dan Nuansa Pesantren" />
+        </div>
+      </section>
+
+      <!-- ==================== 3. PITA INFORMASI RINGKAS ==================== -->
+      <aside class="pita-informasi">
+        <div class="jenis-acara">Wisuda Santri Angkatan Ke-IV</div>
+        <div class="waktu-ringkas">
+          06.30–11.00 WIB<span class="pemisah-waktu">&nbsp;&nbsp;/&nbsp;&nbsp;</span><span class="lokasi-ringkas">Cimanggis, Kota Depok</span>
+        </div>
+      </aside>
+
+      <!-- ==================== 4. PESAN & ISI UNDANGAN ==================== -->
+      <section class="pesan-undangan" id="pesan">
+        <div class="salam-pembuka">
+          <p class="section-label">DENGAN MEMOHON RIDHA ALLAH SWT</p>
+          <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+          <h2 class="section-title">Sebuah undangan,<br />sejuta doa baik.</h2>
+          <div class="aksen-emas"></div>
+        </div>
+
+        <div class="isi-undangan">
+          <div class="salam">Assalamu’alaikum Warahmatullahi Wabarakatuh</div>
+          <p class="description">
+            Pondok Pesantren Tahfidz Al Qur’an Al Hakimiah turut mengundang Bapak/Ibu untuk menghadiri Wisuda Santri Angkatan Ke-IV.
+          </p>
+          <p class="description">
+            Demikian undangan ini kami sampaikan. Atas perhatian serta kehadiran Bapak/Ibu/Saudara/i, kami ucapkan terima kasih.
+          </p>
+          <div class="salam">Wassalamu’alaikum Warahmatullahi Wabarakatuh</div>
+          <div class="fine-rule"></div>
+
+          <div class="pengundang">
+            <div class="pengantar-tanda">Hormat kami,</div>
+            <p class="nama-pengasuh">K.H. Abdul Hakim Muslim, S.Pd</p>
+            <p class="jabatan">Pimpinan &amp; Pengasuh Pondok Pesantren</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 5. WAKTU & TEMPAT ==================== -->
+      <section class="waktu-dan-tempat" id="waktu-tempat">
+        <div class="header-section">
+          <span class="section-label">CATAT HARI ISTIMEWANYA</span>
+          <h2 class="section-title">Bersua dalam keberkahan.</h2>
+        </div>
+
+        <div class="rincian-acara">
+          <!-- Kartu Tanggal & Waktu -->
+          <div class="card-waktu">
+            <div class="label-heading">
+              <div class="icon-box-20">
+                <img class="vector-icon" src="img/calendar-days.svg" alt="Hari" />
+              </div>
+              <span class="section-label-inner">HARI &amp; TANGGAL</span>
+            </div>
+
+            <div class="tanggal-box">
+              <div class="hari-kalender">29</div>
+              <div class="bulan-dan-hari">
+                <div class="hari">Ahad</div>
+                <div class="bulan">November 2026</div>
+              </div>
+            </div>
+
+            <div class="fine-rule"></div>
+
+            <div class="jam-box">
+              <div class="icon-box-20">
+                <img class="vector-icon" src="img/clock-3.svg" alt="Pukul" />
+              </div>
+              <div class="jam-detail">
+                <div class="pukul">PUKUL</div>
+                <div class="rentang-waktu">06.30 WIB s.d 11.00</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kartu Lokasi -->
+          <div class="card-lokasi" id="lokasi">
+            <div class="label-heading">
+              <div class="icon-box-20">
+                <img class="vector-icon" src="img/map-pin.svg" alt="Lokasi" />
+              </div>
+              <span class="section-label-inner">BERTEMPAT DI</span>
+            </div>
+
+            <h3 class="tempat">Halaman Pondok Pesantren</h3>
+            <p class="nama-pondok">Pondok Pesantren Tahfidz Al-Qur’an Al-Hakimiah</p>
+            <p class="description">
+              Jl. Tipar Halim No.56, RT. 002/RW. 006, Kelurahan Mekarsari, Kecamatan Cimanggis, Kota Depok, Jawa Barat 16452.
+            </p>
+
+            <a href="https://maps.app.goo.gl/aRv27rTSkEzq4Epk8" target="_blank" rel="noopener noreferrer" class="action-btn action-primary">
+              <span class="action-label">Petunjuk arah</span>
+              <div class="navigation-icon"></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 6. TAHAPAN PEMBELAJARAN ==================== -->
+      <section class="tahapan-pembelajaran" id="tahapan">
+        <div class="pengantar-tahapan">
+          <div class="header-section">
+            <span class="section-label">PERJALANAN BERSAMA AL-QUR’AN</span>
+            <h2 class="section-title">Setiap tahap,<br />sebuah ikhtiar mulia.</h2>
+          </div>
+          <div class="pengantar-kurikulum">
+            <p class="description">
+              Pembelajaran Al-Qur’an di PPTQ Al-Hakimiah memiliki tiga tingkatan. Santri yang dinyatakan lulus pada setiap tingkatan wajib mengikuti wisuda.
+            </p>
+          </div>
+        </div>
+
+        <div class="jalur-pembelajaran">
+          <!-- Tahap 1 -->
+          <div class="tahap-pembelajaran">
+            <div class="nomor-tahap">
+              <span class="urutan">01</span>
+              <div class="vector-wrapper-24">
+                <img class="vector-icon" src="img/massage.svg" alt="Tahap 1" />
+              </div>
+            </div>
+            <div class="nama-jalur">
+              <h3 class="nama-tahap">Juz ‘Amma</h3>
+              <span class="section-label-inner">JUZ KE 30</span>
+            </div>
+            <p class="penjelasan">Langkah awal membaca dan menghafalkan Juz 30 dari Al-Qur’an.</p>
+            <div class="fine-rule"></div>
+            <ul class="list-kriteria">
+              <li class="kriteria-kelulusan">
+                <div class="check-icon"><img class="vector-icon" src="img/daisy.svg" alt="check" /></div>
+                <span class="kriteria">Hafal Juz ke-30</span>
+              </li>
+              <li class="kriteria-kelulusan">
+                <div class="check-icon"><img class="vector-icon" src="img/daisy.svg" alt="check" /></div>
+                <span class="kriteria">Paham tajwid: sukun &amp; mim sukun</span>
+              </li>
+              <li class="kriteria-kelulusan">
+                <div class="check-icon"><img class="vector-icon" src="img/daisy.svg" alt="check" /></div>
+                <span class="kriteria">Hafal fasholatan (qouliyah &amp; fi’liyah)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tahap 2 -->
+          <div class="tahap-pembelajaran">
+            <div class="nomor-tahap">
+              <span class="urutan">02</span>
+              <div class="vector-wrapper-24">
+                <img class="vector-icon" src="img/flower-tulip.svg" alt="Tahap 2" />
+              </div>
+            </div>
+            <div class="nama-jalur">
+              <h3 class="nama-tahap">Binnadzri</h3>
+              <span class="section-label-inner">MEMBACA</span>
+            </div>
+            <p class="penjelasan">Membaca seluruh Al-Qur’an dengan tartil, baik dan benar sesuai tajwid.</p>
+            <div class="fine-rule"></div>
+            <ul class="list-kriteria">
+              <li class="kriteria-kelulusan">
+                <div class="check-icon"><img class="vector-icon" src="img/daisy.svg" alt="check" /></div>
+                <span class="kriteria">Membaca 30 Juz dengan makhroj &amp; tajwid</span>
+              </li>
+              <li class="kriteria-kelulusan">
+                <div class="check-icon"><img class="vector-icon" src="img/daisy.svg" alt="check" /></div>
+                <span class="kriteria">Hafal surah penting, tajwid, tahlil &amp; doa</span>
+              </li>
+              <li class="kriteria-kelulusan">
+                <div class="check-icon"><img class="vector-icon" src="img/daisy.svg" alt="check" /></div>
+                <span class="kriteria">Hafal fasholatan; 5 Juz bagi santri mukim</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tahap 3 -->
+          <div class="tahap-pembelajaran">
+            <div class="nomor-tahap">
+              <span class="urutan">03</span>
+              <div class="vector-wrapper-24">
+                <img class="vector-icon" src="img/rose.svg" alt="Tahap 3" />
+              </div>
+            </div>
+            <div class="nama-jalur">
+              <h3 class="nama-tahap">Bil Ghoib 30 Juz</h3>
+              <span class="section-label-inner">HAFALAN</span>
+            </div>
+            <p class="penjelasan">Menghafalkan 30 Juz Al-Qur’an dengan bacaan yang tartil.</p>
+            <div class="fine-rule"></div>
+            <ul class="list-kriteria">
+              <li class="kriteria-kelulusan">
+                <div class="check-icon"><img class="vector-icon" src="img/daisy.svg".svg" alt="check" /></div>
+                <span class="kriteria">Tahap akhir pembelajaran</span>
+              </li>
+              <li class="kriteria-kelulusan">
+                <div class="check-icon"><img class="vector-icon" src="img/daisy.svg" alt="check" /></div>
+                <span class="kriteria">Hafalan Al-Qur’an 30 Juz</span>
+              </li>
+              <li class="kriteria-kelulusan">
+                <div class="check-icon"><img class="vector-icon" src="img/daisy.svg" alt="check" /></div>
+                <span class="kriteria">Dibimbing langsung Pengasuh Pondok</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 7. DIREKTORI WISUDAWAN ==================== -->
+<section class="direktori-wisudawan" id="wisudawan">
+  <div class="judul-direktori">
+    <div class="header-section">
+      <span class="section-label">PESERTA WISUDA ANGKATAN KE-IV</span>
+      <h2 class="section-title">Mereka yang menapaki<br />jalan cahaya.</h2>
+    </div>
+    <div class="deskripsi-direktori">
+      <p class="description">
+        Mengenal para santri dan ikhtiar mereka dalam mempelajari serta menghafalkan Al-Qur’an.
+      </p>
+    </div>
+  </div>
+
+  <!-- Filter Tab Kategori dengan atribut data-filter -->
+  <div class="filter-jalur">
+    <button class="filter-kategori active" data-filter="all">Semua</button>
+    <button class="filter-kategori" data-filter="juz-amma">Juz ‘Amma</button>
+    <button class="filter-kategori" data-filter="binnadzri">Binnadzri</button>
+    <button class="filter-kategori" data-filter="bil-ghoib">Bil Ghoib 30 Juz</button>
+  </div>
+
+  <!-- Daftar Santri -->
+  <div class="daftar-santri" id="kontainer-wisudawan">
+
+
+<!-- bil-ghoib -->
+ <div class="wisudawan" data-kategori="bil-ghoib">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Alya Nur Husnina</div>
+    <div class="domisili-dan-jalur">Kendal, Jawa Tengah&nbsp;&nbsp;·&nbsp;&nbsp;Bil Ghoib 30 Juz</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="bil-ghoib">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Ghea Febrina</div>
+    <div class="domisili-dan-jalur">Bekasi, Jawa barat&nbsp;&nbsp;·&nbsp;&nbsp;Bil Ghoib 30 Juz</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="bil-ghoib">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Himmatus Shofia Aini</div>
+    <div class="domisili-dan-jalur">Kendal, Jawa Tengah&nbsp;&nbsp;·&nbsp;&nbsp;Bil Ghoib 30 Juz</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="bil-ghoib">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Intan Mutia</div>
+    <div class="domisili-dan-jalur">Sawangan, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Bil Ghoib 30 Juz</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="bil-ghoib">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Laila Fildzah</div>
+    <div class="domisili-dan-jalur">Cipayung, Jakarta Timur&nbsp;&nbsp;·&nbsp;&nbsp;Bil Ghoib 30 Juz</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="bil-ghoib">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Nazhmi Hayati Hakim</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Bil Ghoib 30 Juz</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="bil-ghoib">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Ning Kaysa Manista'azza</div>
+    <div class="domisili-dan-jalur">Kendal, Jawa Tengah&nbsp;&nbsp;·&nbsp;&nbsp;Bil Ghoib 30 Juz</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="bil-ghoib">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Putri Qurrotu Aini</div>
+    <div class="domisili-dan-jalur">Kendal, Jawa Tengah&nbsp;&nbsp;·&nbsp;&nbsp;Bil Ghoib 30 Juz</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="bil-ghoib">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Rezky Syifa Fauziah</div>
+    <div class="domisili-dan-jalur">Pekayon, Jakarta Timur&nbsp;&nbsp;·&nbsp;&nbsp;Bil Ghoib 30 Juz</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="bil-ghoib">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Sakifah Haibah Abdullah</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Bil Ghoib 30 Juz</div>
+  </div>
+</div>
+<!-- binnadzri -->
+ <div class="wisudawan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Ade Putri Olivia</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Aida Maqbullah Salam</div>
+    <div class="domisili-dan-jalur">Tangerang, Banten&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Alysa Deva Bellavania</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Aqila Putri</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Asshilla Syafidhiyah Hamid</div>
+    <div class="domisili-dan-jalur">Jakarta Selatan&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Athaya Naomi Yasmeen Saliha</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Aura Khairani Salam</div>
+    <div class="domisili-dan-jalur">Tangerang, Banten&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Dyah Ayu Fitriani</div>
+    <div class="domisili-dan-jalur">Kendal, Jawa Tengah&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Dzawata Raisya Andhini</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Faesya Olievia Aizda</div>
+    <div class="domisili-dan-jalur">Palmerah, Jakarta Barat&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Famel Shadiqah</div>
+    <div class="domisili-dan-jalur">Depok, Jawa Barat&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Fathimah Sholihah Sibawaihi</div>
+    <div class="domisili-dan-jalur">Cibubur, Jakarta Timur&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Fitri Wulandari</div>
+    <div class="domisili-dan-jalur">Depok, Jawa Barat&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Hana Azkia Qurrotu Aini</div>
+    <div class="domisili-dan-jalur">Ciputat Timur, Tangerang Selatan&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Hanifah Fitriani Suseno</div>
+    <div class="domisili-dan-jalur">Depok, Jawa Barat&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Ikrima Tsabita Lutfa</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Lubna Putri Pakpahan</div>
+    <div class="domisili-dan-jalur">Pekayon, Jakarta Timur&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Najwa Khaira Wilda</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Rahma Khoiriyah Nasution</div>
+    <div class="domisili-dan-jalur">Serpong, Bogor&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Raisya Aprilia Azzahra</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Rihhadatul Aisy Aulia</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Ririn Khoiriyyah</div>
+    <div class="domisili-dan-jalur">Jakarta Timur&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Rizqana Mursyidah</div>
+    <div class="domisili-dan-jalur">Ciputat Timur, Tangerang Selatan&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Salma Safina</div>
+    <div class="domisili-dan-jalur">Kendal, Jawa Tengah&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Silfi Ainauzzakiya</div>
+    <div class="domisili-dan-jalur">Kendal, Jawa Tengah&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Siti Zukhriatul Hafizah</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Syifaun Nufus</div>
+    <div class="domisili-dan-jalur">Matraman, Jakarta Timur&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+ <div class="wisudawan wisudawan-tambahan" data-kategori="binnadzri">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Windy Ramadhani</div>
+    <div class="domisili-dan-jalur">Ciracas, Jakarta Timur&nbsp;&nbsp;·&nbsp;&nbsp;Binnadzri</div>
+  </div>
+</div>
+<!-- juz-amma -->
+<div class="wisudawan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Arsyaka Abyasa Fianzah</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Camelia Rahma Setiadi</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Chabie Naura Mallista</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Hilwa Adiba Sofyan</div>
+    <div class="domisili-dan-jalur">Matraman, Jakarta Timur&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Inaya Azmi Athifa</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Kaila Naysa Maharani</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Latisya Atha Syakila</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">M. Ghaza Al fariz</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">M. kenzo syawlani</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan wisudawan-tambahan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Naufal Afkar Assyauqi</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan wisudawan-tambahan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Nazhiva Syaqina Azzahra </div>
+    <div class="domisili-dan-jalur">Tangerang, Banten&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Ning Queen Shila Hasina</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan wisudawan-tambahan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Rizky Mutiara Ramadhani</div>
+    <div class="domisili-dan-jalur">Bekasi, Jawa Barat&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan wisudawan-tambahan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Satrya Raza</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan wisudawan-tambahan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Siti Aisyaturidho</div>
+    <div class="domisili-dan-jalur">Matraman, Jakarta Timur&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan wisudawan-tambahan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Syafa Nur Hafizah</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan wisudawan-tambahan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Zafran Haidar Assidiq</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+<div class="wisudawan wisudawan-tambahan" data-kategori="juz-amma">
+  <div class="simbol-kelulusan">
+    <div class="book-open-2"><img class="vector-icon" src="img/daisy.svg" alt="Icon" /></div>
+  </div>
+  <div class="identitas-santri">
+    <div class="nama">Zavier Al dillin</div>
+    <div class="domisili-dan-jalur">Cimanggis, Depok&nbsp;&nbsp;·&nbsp;&nbsp;Juz ‘Amma</div>
+  </div>
+</div>
+    <!-- Santri Tambahan (Awalnya tersembunyi, terbuka saat klik "Lihat seluruh wisudawan") -->
+    
+
+  <!-- Pesan jika tidak ada santri yang cocok dengan filter -->
+  <div id="pesan-kosong" class="pesan-kosong" style="display: none;">
+    <p>Belum ada santri pada kategori ini.</p>
+  </div>
+
+  <div class="footer-direktori">
+    <p class="keterangan-pratinjau" id="teks-pratinjau">Menampilkan 6 nama dari daftar peserta pada undangan.</p>
+    <button type="button" class="action-btn action-secondary" id="btn-lihat-semua">
+      <span class="action-label-secondary" id="label-lihat-semua">Lihat seluruh wisudawan</span>
+      <div class="icon-box-16">
+        <img class="vector-icon icon-panah" src="img/arrow-up-right.svg" alt="Aksi" />
+      </div>
+    </button>
+  </div>
+</section>
+
+      <!-- ==================== 8. PANDUAN KEHADIRAN ==================== -->
+      <section class="panduan-kehadiran">
+        <div class="pengantar-panduan">
+          <span class="section-label">SEBELUM HADIR</span>
+          <h2 class="section-title">Hadir dengan<br />niat terbaik.</h2>
+        </div>
+
+        <div class="catatan-untuk-jamaah">
+          <div class="item-panduan">
+            <div class="icon-box-28">
+              <img class="vector-icon" src="img/clock-3.svg" alt="Jam" />
+            </div>
+            <h3 class="judul-panduan">Hadir tepat waktu</h3>
+            <p class="description">Acara dimulai pukul 06.30 WIB. Mohon jamaah hadir tepat pada waktunya.</p>
+          </div>
+
+          <div class="item-panduan">
+            <div class="icon-box-28">
+              <img class="vector-icon" src="img/shirt.svg" alt="Pakaian" />
+            </div>
+            <h3 class="judul-panduan">Berpakaian putih</h3>
+            <p class="description">Jamaah yang hadir dimohon menggunakan pakaian berwarna putih.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== 9. DOA PENUTUP & PENGASUH ==================== -->
+      <section class="doa-penutup">
+        <div class="flower-icon">
+          <img class="vector-icon" src="img/pptq2.svg" alt="Ornamen" />
+        </div>
+        <span class="section-label-light">TERIRING DOA DAN TERIMA KASIH</span>
+        <h2 class="pesan-penutup">Kehadiran Anda menjadi<br />bagian dari kebahagiaan kami.</h2>
+        <p class="ucapan-terima-kasih">
+          Atas perhatian serta kehadiran Bapak/Ibu/Saudara/i, kami ucapkan terima kasih. Semoga Allah SWT senantiasa melimpahkan keberkahan kepada kita semua.
+        </p>
+
+        <a href="#lokasi" class="action-btn action-light">
+          <span class="action-label-secondary">Lihat petunjuk arah</span>
+          <div class="icon-box-16">
+            <img class="vector-icon" src="img/map-pin.svg" alt="Arah" />
+          </div>
+        </a>
+
+        <div class="pemisah-pengasuh"></div>
+
+        <div class="pengasuh-pondok">
+          <div class="pengasuh">
+            <p class="nama-pengasuh-penutup">Agus H. Mohammad Shindy, M.Pd</p>
+            <div class="peran">Pengasuh Pondok Pesantren</div>
+          </div>
+          <div class="pengasuh">
+            <p class="nama-pengasuh-penutup">Ning Hj. Noor Rahmatika, Al Hafidzah</p>
+            <div class="peran">Pengasuh Pondok Pesantren</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==================== 10. FOOTER ==================== -->
+    <footer class="footer">
+      <div class="brand-group">
+        <div class="identity-emblem">
+          <div class="book-open">
+            <img class="vector-icon" src="img/Alhakimiah(1).svg" alt="Emblem Pondok" />
+          </div>
+        </div>
+        <div class="institution">
+          <div class="institution-name">Al-Hakimiah</div>
+          <div class="text-sub">PONDOK PESANTREN TAHFIDZ AL-QUR’AN</div>
+        </div>
+      </div>
+
+      <div class="identitas-undangan">
+        <p class="edisi">Haflah Khotmil Qur’an · Angkatan Ke-IV</p>
+        <p class="kota-dan-tanggal">Depok, Jawa Barat · 29 November 2026</p>
+      </div>
+    </footer>
+
+  </div>
+  <!--==================== LOGIKA FITUR DIREKTORI WISUDAWAN ==================== -->
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const filterButtons = document.querySelectorAll('.filter-kategori');
+  const allCards = document.querySelectorAll('.wisudawan');
+  const kontainer = document.getElementById('kontainer-wisudawan');
+  const btnLihatSemua = document.getElementById('btn-lihat-semua');
+  const labelLihatSemua = document.getElementById('label-lihat-semua');
+  const iconPanah = document.querySelector('.icon-panah');
+  const teksPratinjau = document.getElementById('teks-pratinjau');
+  const pesanKosong = document.getElementById('pesan-kosong');
+
+  let activeFilter = 'all';
+  let isExpanded = false;
+
+  // Fungsi untuk memperbarui tampilan santri dan jumlah yang tampil
+  function updateTampilan() {
+    let jumlahTampil = 0;
+
+    allCards.forEach(card => {
+      const kategori = card.getAttribute('data-kategori');
+      const isExtra = card.classList.contains('wisudawan-tambahan');
+
+      // Apakah kartu ini diizinkan tampil berdasarkan status tombol "Lihat Semua"?
+      const lolosStatusLihat = !isExtra || isExpanded;
+
+      // Apakah kartu ini lolos filter kategori?
+      const lolosFilter = activeFilter === 'all' || kategori === activeFilter;
+
+      if (lolosStatusLihat && lolosFilter) {
+        card.classList.remove('tersembunyi-filter');
+        jumlahTampil++;
+      } else {
+        card.classList.add('tersembunyi-filter');
+      }
+    });
+
+    // Perbarui teks jumlah pratinjau
+    if (teksPratinjau) {
+      teksPratinjau.textContent = `Menampilkan ${jumlahTampil} nama dari daftar peserta pada undangan.`;
+    }
+
+    // Tampilkan pesan kosong jika tidak ada yang cocok
+    if (pesanKosong) {
+      pesanKosong.style.display = jumlahTampil === 0 ? 'block' : 'none';
+    }
+  }
+
+  // 1. Event Handler untuk Tombol Filter Kategori
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      activeFilter = btn.getAttribute('data-filter');
+      updateTampilan();
+    });
+  });
+
+  // 2. Event Handler untuk Tombol "Lihat Seluruh Wisudawan"
+  if (btnLihatSemua) {
+    btnLihatSemua.addEventListener('click', (e) => {
+      e.preventDefault();
+      isExpanded = !isExpanded;
+
+      if (isExpanded) {
+        kontainer.classList.add('tampilkan-semua');
+        labelLihatSemua.textContent = 'Tampilkan lebih sedikit';
+        if (iconPanah) iconPanah.classList.add('terputar');
+      } else {
+        kontainer.classList.remove('tampilkan-semua');
+        labelLihatSemua.textContent = 'Lihat seluruh wisudawan';
+        if (iconPanah) iconPanah.classList.remove('terputar');
+      }
+
+      updateTampilan();
+    });
+  }
+
+  // Inisialisasi awal
+  updateTampilan();
+}); </script>
+</body>
+</html>

@@ -1,0 +1,1241 @@
+/* =========================================================
+   KOMPONEN UMUM & UTILITAS
+   ========================================================= */
+.al-hakimiah-undangan {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--color-bg-base);
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Pembatas garis halus */
+.fine-rule {
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+/* Label Seksi Kecil */
+.section-label {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.23px;
+  line-height: 1.5;
+  color: var(--color-maroon);
+  text-transform: uppercase;
+}
+
+.section-label-inner {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.23px;
+  color: var(--color-maroon);
+}
+
+.section-label-light {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.23px;
+  color: var(--color-gold-border);
+}
+
+.garis-aksen {
+  width: 28px;
+  height: 1px;
+  background-color: var(--color-gold);
+}
+
+/* Tipografi Judul */
+.section-title {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.12;
+  letter-spacing: -0.3px;
+  color: var(--color-maroon);
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--color-text-body);
+}
+
+/* Icon Box Containers */
+.icon-box-16 {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.icon-box-20 {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.icon-box-28 {
+  width: 28px;
+  height: 28px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.vector-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Tombol Aksi */
+.action-btn {
+  display: inline-flex;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 22px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.action-primary {
+  background-color: var(--color-maroon);
+  color: var(--color-bg-card);
+  border: 1px solid transparent;
+}
+.action-primary:hover {
+  background-color: #421620;
+}
+
+.action-secondary {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  color: var(--color-maroon);
+}
+.action-secondary:hover {
+  background-color: #f7ede0;
+}
+
+.action-light {
+  background-color: var(--color-bg-card);
+  color: var(--color-maroon);
+  border: 1px solid transparent;
+}
+.action-light:hover {
+  background-color: #f7ede0;
+}
+
+.action-label,
+.action-label-secondary {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 12px;
+}
+
+/* 1. Mencegah konten tertutup oleh Header saat tombol ditekan */
+section[id] {
+  scroll-margin-top: 96px; /* Menyesuaikan tinggi header */
+}
+
+/* 2. Styling Menu Navigasi Mobile saat aktif */
+@media (max-width: 1023px) {
+  /* Header dibuat sticky agar navigasi mudah diakses */
+  .navigasi {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  /* Tampilan menu dropdown saat hamburger diklik */
+  .navbar.is-active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 88px; /* Tepat di bawah header mobile */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-bg-base);
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 2px solid var(--color-border);
+    box-shadow: 0 10px 20px rgba(89, 30, 43, 0.08);
+  }
+
+  .navbar.is-active .tautan {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--color-border);
+    width: 100%;
+  }
+
+  .navbar.is-active .action-btn {
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+/* =========================================================
+   1. NAVIGASI / HEADER
+   ========================================================= */
+.navigasi {
+  display: flex;
+  height: 88px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--color-border);
+  width: 100%;
+  background-color: var(--color-bg-base);
+}
+
+.brand-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.identity-emblem {
+  display: flex;
+  width: 40px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 22px 22px 3px 3px;
+  border: 1px solid var(--color-gold);
+  overflow: hidden;
+}
+
+.identity-emblem .book-open {
+  width: 22px;
+  height: 22px;
+}
+
+.institution {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.institution-name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-maroon);
+  font-size: 23px;
+  line-height: 1;
+}
+
+.text-sub {
+  font-family: var(--font-sans);
+  font-size: 8px;
+  letter-spacing: 0.08px;
+  color: var(--color-text-body);
+}
+
+.navbar {
+  display: none; /* Disembunyikan di mobile */
+  align-items: center;
+  gap: 32px;
+}
+
+.tautan {
+  font-size: 12px;
+  color: var(--color-text-body);
+  transition: color 0.2s ease;
+}
+.tautan:hover {
+  color: var(--color-maroon);
+}
+
+.menu-toggle-mobile {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================================================
+   2. HERO / SAMPUL UNDANGAN
+   ========================================================= */
+.sampul-undangan {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 24px 40px;
+  gap: 36px;
+}
+
+.judul-acara {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.judul-utama {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--color-maroon);
+  font-size: 52px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.tema-wisuda {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-maroon);
+  font-size: 26px;
+  line-height: 1.25;
+}
+
+.pengantar-acara {
+  font-size: 14px;
+  line-height: 1.85;
+  color: var(--color-text-body);
+}
+
+.info-tanggal {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.calendar-days {
+  width: 18px;
+  height: 18px;
+}
+
+.tanggal-acara {
+  font-weight: 500;
+  color: var(--color-maroon);
+  font-size: 13px;
+}
+
+.aksi-pembuka {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.ilustrasi-seremonial {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 360px;
+  height: 380px;
+  margin: 0 auto;
+  padding: 6px;
+  border-radius: 250px 250px 8px 8px;
+  border: 1px solid var(--color-gold-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.al-quran-dan-taman {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 240px 240px 4px 4px;
+}
+
+.ilustrasi-caption {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 24px;
+  font-size: 9px;
+  color: var(--color-maroon);
+  letter-spacing: 0.18px;
+  text-align: center;
+}
+
+/* =========================================================
+   3. PITA INFORMASI
+   ========================================================= */
+.pita-informasi {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 24px;
+  background-color: var(--color-maroon);
+  color: var(--color-bg-card);
+}
+
+.jenis-acara {
+  font-family: var(--font-serif);
+  font-size: 20px;
+}
+
+.waktu-ringkas {
+  font-size: 11px;
+  color: var(--color-text-light);
+}
+
+/* =========================================================
+   4. PESAN UNDANGAN
+   ========================================================= */
+.pesan-undangan {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 64px 24px;
+}
+
+.salam-pembuka {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bismillah {
+  font-family: var(--font-arabic);
+  font-size: 32px;
+  line-height: 1.5;
+  color: var(--color-gold);
+  direction: rtl;
+  text-align: left;
+}
+
+.aksen-emas {
+  width: 56px;
+  height: 1px;
+  background-color: var(--color-gold);
+}
+
+.isi-undangan {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.salam {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-maroon);
+  font-size: 24px;
+}
+
+.salam-penutup {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--color-text-dark);
+}
+
+.pengundang {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.pengantar-tanda {
+  font-size: 11px;
+  color: var(--color-text-body);
+}
+
+.nama-pengasuh {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--color-maroon);
+}
+
+.jabatan {
+  font-size: 11px;
+  color: var(--color-text-body);
+}
+
+/* =========================================================
+   5. WAKTU DAN TEMPAT
+   ========================================================= */
+.waktu-dan-tempat {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 56px 24px;
+  background-color: var(--color-bg-soft);
+}
+
+.header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rincian-acara {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-waktu,
+.card-lokasi {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
+  background-color: var(--color-bg-card);
+  border-radius: 8px;
+}
+
+.label-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tanggal-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.hari-kalender {
+  font-family: var(--font-serif);
+  font-size: 76px;
+  line-height: 1;
+  color: var(--color-maroon);
+}
+
+.bulan-dan-hari {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hari {
+  font-size: 14px;
+  color: var(--color-text-dark);
+}
+
+.bulan {
+  font-family: var(--font-serif);
+  font-size: 25px;
+  color: var(--color-maroon);
+}
+
+.jam-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.jam-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pukul {
+  font-size: 10px;
+  color: var(--color-text-body);
+}
+
+.rentang-waktu {
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--color-maroon);
+}
+
+.tempat {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--color-maroon);
+}
+
+.nama-pondok {
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--color-text-dark);
+}
+
+.navigation-icon {
+  width: 16px;
+  height: 16px;
+  background: url(./img/vector-13.svg) no-repeat center / contain;
+}
+
+/* =========================================================
+   6. TAHAPAN PEMBELAJARAN
+   ========================================================= */
+.tahapan-pembelajaran {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 64px 24px;
+}
+
+.pengantar-tahapan {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jalur-pembelajaran {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tahap-pembelajaran {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px;
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+}
+
+.nomor-tahap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.urutan {
+  font-family: var(--font-serif);
+  font-size: 38px;
+  color: var(--color-gold);
+}
+
+.vector-wrapper-24 {
+  width: 24px;
+  height: 24px;
+}
+
+.nama-jalur {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.nama-tahap {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: var(--color-maroon);
+}
+
+.penjelasan {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--color-text-body);
+}
+
+.list-kriteria {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kriteria-kelulusan {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.check-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.kriteria {
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--color-text-dark);
+}
+
+/* =========================================================
+   7. DIREKTORI WISUDAWAN
+   ========================================================= */
+.direktori-wisudawan {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 56px 24px;
+  background-color: var(--color-bg-card);
+}
+
+.judul-direktori {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filter-jalur {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-kategori {
+  height: 36px;
+  padding: 0 16px;
+  border-radius: 100px;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-body);
+  font-size: 11px;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.filter-kategori.active,
+.filter-kategori:hover {
+  background-color: var(--color-maroon);
+  color: var(--color-bg-card);
+  border-color: var(--color-maroon);
+}
+
+.daftar-santri {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wisudawan {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.simbol-kelulusan {
+  display: flex;
+  width: 42px;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg-soft);
+  border-radius: 24px 24px 3px 3px;
+  flex-shrink: 0;
+}
+
+.book-open-2 {
+  width: 19px;
+  height: 19px;
+}
+
+.identitas-santri {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nama {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 22px;
+  color: var(--color-maroon);
+}
+
+.domisili-dan-jalur {
+  font-size: 10px;
+  color: var(--color-text-body);
+}
+
+.footer-direktori {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.keterangan-pratinjau {
+  font-size: 11px;
+  color: var(--color-text-body);
+}
+
+/* =========================================================
+   8. PANDUAN KEHADIRAN
+   ========================================================= */
+.panduan-kehadiran {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 56px 24px;
+}
+
+.pengantar-panduan {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.catatan-untuk-jamaah {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.item-panduan {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.judul-panduan {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  color: var(--color-maroon);
+}
+
+/* =========================================================
+   9. DOA PENUTUP & PENGASUH
+   ========================================================= */
+.doa-penutup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 64px 24px;
+  background-color: var(--color-maroon);
+  color: var(--color-bg-card);
+  text-align: center;
+}
+
+.flower-icon {
+  width: 38px;
+  height: 38px;
+}
+
+.pesan-penutup {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+.ucapan-terima-kasih {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--color-text-light);
+  max-width: 600px;
+}
+
+.pemisah-pengasuh {
+  width: 100px;
+  height: 1px;
+  background-color: var(--color-gold);
+  opacity: 0.5;
+  margin: 12px 0;
+}
+
+.pengasuh-pondok {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.pengasuh {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.nama-pengasuh-penutup {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  color: var(--color-bg-card);
+}
+
+.peran {
+  font-size: 10px;
+  color: var(--color-text-subtle);
+}
+
+/* =========================================================
+   10. FOOTER
+   ========================================================= */
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px 24px;
+  align-items: flex-start;
+}
+
+.identitas-undangan {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.edisi {
+  font-size: 11px;
+  color: var(--color-maroon);
+}
+
+.kota-dan-tanggal {
+  font-size: 10px;
+  color: var(--color-text-body);
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN BREAKPOINTS
+   ========================================================= */
+
+/* --- Tablet / Layar Sedang (min-width: 768px) --- */
+@media (min-width: 768px) {
+  .navigasi {
+    padding: 0 48px;
+  }
+
+  .sampul-undangan,
+  .pesan-undangan,
+  .waktu-dan-tempat,
+  .tahapan-pembelajaran,
+  .direktori-wisudawan,
+  .panduan-kehadiran,
+  .doa-penutup,
+  .footer {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .pita-informasi {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+  }
+
+  /* Grid 2 kolom untuk direktori santri */
+  .daftar-santri {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 48px;
+  }
+
+  .catatan-untuk-jamaah {
+    flex-direction: row;
+  }
+
+  .item-panduan {
+    flex: 1;
+  }
+
+  .pengasuh-pondok {
+    flex-direction: row;
+    justify-content: center;
+    gap: 48px;
+  }
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .identitas-undangan {
+    align-items: flex-end;
+  }
+}
+
+/* --- Desktop / Layar Besar (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+  .navigasi {
+    height: 104px;
+    padding: 0 64px;
+  }
+
+  .navbar {
+    display: flex; /* Menu desktop tampil */
+  }
+
+  .menu-toggle-mobile {
+    display: none; /* Sembunyikan tombol hamburger */
+  }
+
+  .institution-name {
+    font-size: 26px;
+  }
+
+  /* Layout 2 Kolom Hero Desktop */
+  .sampul-undangan {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 112px 64px;
+    gap: 64px;
+  }
+
+  .judul-acara {
+    max-width: 660px;
+    gap: 24px;
+  }
+
+  .judul-utama {
+    font-size: 84px;
+    letter-spacing: -1.85px;
+  }
+
+  .tema-wisuda {
+    font-size: 35px;
+    line-height: 42px;
+  }
+
+  .pengantar-acara {
+    max-width: 490px;
+  }
+
+  .ilustrasi-seremonial {
+    width: 492px;
+    max-width: none;
+    height: 548px;
+    margin: 0;
+  }
+
+  .pita-informasi {
+    padding: 22px 112px;
+  }
+
+  .jenis-acara {
+    font-size: 25px;
+  }
+
+  .waktu-ringkas {
+    font-size: 12px;
+  }
+
+  /* Pesan Undangan Desktop 2 Kolom */
+  .pesan-undangan {
+    flex-direction: row;
+    gap: 88px;
+    padding: 96px 112px;
+  }
+
+  .salam-pembuka {
+    width: 340px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-size: 50px;
+    line-height: 54px;
+    letter-spacing: -0.4px;
+  }
+
+  .isi-undangan {
+    flex: 1;
+  }
+
+  /* Waktu dan Tempat Desktop */
+  .waktu-dan-tempat {
+    padding: 80px 112px;
+    gap: 36px;
+  }
+
+  .rincian-acara {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .card-waktu {
+    width: 448px;
+    flex-shrink: 0;
+    padding: 36px;
+  }
+
+  .card-lokasi {
+    flex: 1;
+    padding: 36px;
+  }
+
+  .hari-kalender {
+    font-size: 84px;
+  }
+
+  .tempat {
+    font-size: 34px;
+  }
+
+  /* Tahapan Pembelajaran Desktop 3 Kartu Berdampingan */
+  .tahapan-pembelajaran {
+    padding: 88px 112px;
+  }
+
+  .pengantar-tahapan {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 80px;
+  }
+
+  .pengantar-kurikulum {
+    max-width: 440px;
+  }
+
+  .jalur-pembelajaran {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .tahap-pembelajaran {
+    flex: 1;
+  }
+
+  .urutan {
+    font-size: 42px;
+  }
+
+  .nama-tahap {
+    font-size: 33px;
+  }
+
+  /* Direktori Wisudawan Desktop */
+  .direktori-wisudawan {
+    padding: 80px 112px;
+    gap: 30px;
+  }
+
+  .judul-direktori {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 100px;
+  }
+
+  .deskripsi-direktori {
+    max-width: 380px;
+  }
+
+  .daftar-santri {
+    column-gap: 64px;
+  }
+
+  .footer-direktori {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Panduan Kehadiran Desktop */
+  .panduan-kehadiran {
+    flex-direction: row;
+    gap: 64px;
+    padding: 72px 112px;
+  }
+
+  .pengantar-panduan {
+    width: 400px;
+    flex-shrink: 0;
+  }
+
+  .catatan-untuk-jamaah {
+    flex: 1;
+    gap: 28px;
+  }
+
+  .judul-panduan {
+    font-size: 28px;
+  }
+
+  /* Doa Penutup Desktop */
+  .doa-penutup {
+    padding: 72px 112px;
+    gap: 26px;
+  }
+
+  .pesan-penutup {
+    font-size: 57px;
+    line-height: 64px;
+    max-width: 840px;
+  }
+
+  .ucapan-terima-kasih {
+    max-width: 630px;
+  }
+
+  .pemisah-pengasuh {
+    width: 200px;
+  }
+
+  .nama-pengasuh-penutup {
+    font-size: 25px;
+  }
+
+  .footer {
+    padding: 32px 64px;
+  }
+}
+/* Sembunyikan santri tambahan secara bawaan */
+.wisudawan.wisudawan-tambahan {
+  display: none;
+}
+
+/* Tampilkan santri tambahan jika mode seluruh wisudawan aktif */
+.daftar-santri.tampilkan-semua .wisudawan.wisudawan-tambahan {
+  display: flex;
+}
+
+/* Sembunyikan kartu jika tidak sesuai filter */
+.wisudawan.tersembunyi-filter {
+  display: none !important;
+}
+
+/* Transisi halus saat filter berganti */
+.wisudawan {
+  animation: fadeIn 0.35s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Putar panah ke bawah jika sedang terbuka */
+.icon-panah {
+  transition: transform 0.3s ease;
+}
+.icon-panah.terputar {
+  transform: rotate(90deg);
+}
+
+/* Pesan kosong bila filter tidak menemukan nama */
+.pesan-kosong {
+  padding: 32px 0;
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text-body);
+  font-family: var(--font-sans);
+  width: 100%;
+}

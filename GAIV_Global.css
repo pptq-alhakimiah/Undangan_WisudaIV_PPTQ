@@ -1,0 +1,102 @@
+/* =========================================================
+   GLOBAL RESET & VARIABEL TEMA
+   ========================================================= */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+
+:root {
+  /* Palet Warna */
+  --color-maroon: #591e2b;
+  --color-gold: #b3935d;
+  --color-gold-border: #ebdfca;
+  --color-bg-base: #faf6ef;
+  --color-bg-card: #fffcf7;
+  --color-bg-soft: #f3e5df;
+  --color-border: #e4d8c9;
+  --color-text-dark: #39272b;
+  --color-text-body: #7e6b68;
+  --color-text-light: #f3e5df;
+  --color-text-subtle: #d9bdb1;
+
+  /* Tipografi */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-arabic: "Amiri", serif;
+}
+
+/* Base Reset & Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--color-bg-base);
+  color: var(--color-text-dark);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+/* Tautan & Tombol */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #4a90e2 !important;
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================================================
+   LOCAL / CUSTOM FONT FALLBACKS
+   ========================================================= */
+@font-face {
+  font-family: "Cormorant Garamond-SemiBold";
+  src: local("Cormorant Garamond SemiBold"), local("CormorantGaramond-SemiBold");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond-Medium";
+  src: local("Cormorant Garamond Medium"), local("CormorantGaramond-Medium");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cormorant Garamond-Regular";
+  src: local("Cormorant Garamond"), local("CormorantGaramond-Regular");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Amiri-Regular";
+  src: local("Amiri"), local("Amiri-Regular");
+  font-weight: 400;
+  font-display: swap;
+}
